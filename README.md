@@ -2,6 +2,16 @@
 
 A Model Context Protocol (MCP) server that enables AI assistants to search and discover academic papers from arXiv using semantic search capabilities powered by the ArXivXplorer API.
 
+## How It Works
+
+This MCP server acts as a bridge between AI assistants (like Claude Desktop) and the ArXivXplorer API:
+
+- **ArXivXplorer API**: A third-party service that provides semantic search over arXiv papers (not the official arXiv.org API)
+- **Your Server**: Makes direct HTTP requests to ArXivXplorer to search for papers
+- **AI Assistant**: Invokes your server as a tool when you ask questions about research papers
+
+**Important**: The AI assistant (Claude) does not perform the search itself. It simply calls this MCP server, which then queries the ArXivXplorer API and returns the results.
+
 ## Features
 
 - **Semantic Search**: Find relevant papers using natural language queries
@@ -105,6 +115,7 @@ Once configured with Claude Desktop, you can ask Claude:
 
 - `arxiv_server_v2.py` - Main MCP server implementation
 - `pyproject.toml` - Project dependencies and configuration
+
 - `README.md` - This file
 
 ## Credits
